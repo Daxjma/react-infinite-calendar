@@ -5,11 +5,20 @@ export default function Day({currentYear, date, day, handleDayClick, isDisabled,
 	var {date: mmt, yyyymmdd} = date;
 	var year = mmt.year();
 
+	var tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+	var d = date.date.toDate();
+
+	var classes = []
+	classes.push(style.root)
+	classes.push(isToday ? style.today : '')
+	classes.push(isSelected ? style.selected : '')
+	classes.push(isDisabled ? style.disabled : style.enabled)
+	classes.push(d.getDate() === 12 ? style.tipEnabled : '')
+
 	return (
 		<li
 			style={(isToday) ? {color: theme.todayColor} : null, (!isDisabled) ? {background: theme.dayEnabled.background} : null}
-			className={
-				`${style.root} ${isToday ? style.today : ''} ${isSelected ? style.selected : ''} ${isDisabled ? style.disabled : style.enabled} ${style.tipEnabled}`}
+			className={classes.join(' ')}
 			data-date={yyyymmdd}
 			onClick={(!isDisabled && handleDayClick) ? handleDayClick.bind(this, mmt) : null}
 			>

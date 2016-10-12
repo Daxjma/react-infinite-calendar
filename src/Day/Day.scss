@@ -25,14 +25,6 @@
     cursor: pointer;
     user-select: none;
 
-    &.tipEnabled {
-        &:hover {
-            .tooltip {
-                visibility: visible;
-            }
-        }
-    }
-
     &.enabled {
         &.highlighted, &:active, &:hover {
             position: relative;
@@ -51,6 +43,17 @@
         }
         &.highlighted:before, &:active:before {
             opacity: 1;
+        }
+    }
+
+    &.tipEnabled {
+        &:hover {
+            .tooltip {
+                visibility: visible;
+            }
+        }
+        &.enabled {
+            z-index: auto;
         }
     }
 
@@ -153,7 +156,7 @@
     margin-left: -60px;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 100%;
       left: 50%;
