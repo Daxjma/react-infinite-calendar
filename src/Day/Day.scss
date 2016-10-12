@@ -25,6 +25,14 @@
     cursor: pointer;
     user-select: none;
 
+    &.tipEnabled {
+        &:hover {
+            .tooltip {
+                visibility: visible;
+            }
+        }
+    }
+
     &.enabled {
         &.highlighted, &:active, &:hover {
             position: relative;
@@ -126,4 +134,32 @@
 }
 .year {
     bottom: 5px;
+}
+
+
+.tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    top: 75%;
+    left: 50%;
+    height: 50px;
+    margin-left: -60px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent black transparent;
+    }
 }

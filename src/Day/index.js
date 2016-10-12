@@ -8,14 +8,19 @@ export default function Day({currentYear, date, day, handleDayClick, isDisabled,
 	return (
 		<li
 			style={(isToday) ? {color: theme.todayColor} : null, (!isDisabled) ? {background: theme.dayEnabled.background} : null}
-			className={`${style.root} ${isToday ? ' ' + style.today : ''} ${isSelected ? ' ' + style.selected : ''} ${isDisabled ? ' ' + style.disabled : ' ' + style.enabled}`}
+			className={
+				`${style.root} ${isToday ? style.today : ''} ${isSelected ? style.selected : ''} ${isDisabled ? style.disabled : style.enabled} ${style.tipEnabled}`}
 			data-date={yyyymmdd}
 			onClick={(!isDisabled && handleDayClick) ? handleDayClick.bind(this, mmt) : null}
-		>
+			>
+
 			{(day === 1) && <span className={style.month}>{monthShort}</span>}
 			<span className={style.simpleDay}>{day}</span>
 			{(day === 1 && currentYear !== year) && <span className={style.year}>{year}</span>}
 			{isSelected && renderSelectedDayContents(locale, isToday, day, monthShort, theme)}
+
+			<p className={style.tooltip}>Tooltip</p>
+
 		</li>
 	);
 }
