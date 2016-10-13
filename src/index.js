@@ -34,6 +34,7 @@ export default class InfiniteCalendar extends Component {
 		};
 	}
 	static defaultProps = {
+		tooltipTitle: '',
 		width: 400,
 		height: 500,
 		rowHeight: 56,
@@ -44,6 +45,7 @@ export default class InfiniteCalendar extends Component {
 		multiDate: false,
 		selectedDates: [new Date()],
 		fixedSelectedDates: [],
+		tooltipDates: [],
 		min: {year: 1980, month: 0, day: 0},
 		minDate: {year: 1980, month: 0, day: 0},
 		max: {year: 2050, month: 11, day: 31},
@@ -60,6 +62,8 @@ export default class InfiniteCalendar extends Component {
 		hideYearsOnSelect: true
 	};
 	static propTypes = {
+		tooltipTitle: PropTypes.string,
+		tooltipDates: PropTypes.arrayOf(validDate),
 		selectedDates: PropTypes.arrayOf(validDate),
 		fixedSelectedDates: PropTypes.arrayOf(validDate),
 		multiDate: PropTypes.bool,

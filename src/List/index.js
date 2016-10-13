@@ -83,11 +83,13 @@ export default class List extends Component {
 		}
 	};
 	renderMonth = ({index, isScrolling}) => {
-		let {disabledDates, fixedSelectedDates, disabledDays, locale, months, maxDate, minDate, onDaySelect, rowHeight, selectedDates, showOverlay, theme, today} = this.props;
+		let {tooltipDates, tooltipTitle, disabledDates, fixedSelectedDates, disabledDays, locale, months, maxDate, minDate, onDaySelect, rowHeight, selectedDates, showOverlay, theme, today} = this.props;
 		let {date, rows} = this.memoize(months[index]);
 
 		return (
 			<Month
+				tooltipTitle={tooltipTitle}
+				tooltipDates={tooltipDates}
 				key={`Month-${index}`}
 				selectedDates={selectedDates}
 				fixedSelectedDates={fixedSelectedDates}

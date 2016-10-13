@@ -12,39 +12,45 @@
     border-radius: 50%;
 }
 
+@mixin left() {
+
+      left: -10%;
+      &::after {
+          left: 80%;
+      }
+}
+
+@mixin right() {
+
+      left: 110%;
+      &::after {
+          left: 20%;
+      }
+}
+
 .root {
 
     display: inline-block;
     box-sizing: border-box;
     width: 1 / 7 * 100%;
-
     list-style: none;
-
     font-size: 16px;
     text-align: center;
-
     cursor: pointer;
     user-select: none;
-
 
     &:first-child {
         &.tipEnabled {
             .tooltip {
-                left: 110%;
-                &::after {
-                    left: 20%;
-                }
+                @include right();
             }
         }
     }
 
-    &:last-child {
+    &:nth-child(7) {
         &.tipEnabled {
             .tooltip {
-                left: -10%;
-                &::after {
-                    left: 80%;
-                }
+                @include left();
             }
         }
     }

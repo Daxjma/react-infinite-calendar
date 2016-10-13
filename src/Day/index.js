@@ -1,7 +1,7 @@
 import React from 'react';
 const style = require('./Day.scss');
 
-export default function Day({currentYear, date, day, handleDayClick, isDisabled, isToday, isSelected, monthShort, locale, theme}) {
+export default function Day({tooltipTitle, showTooltip, currentYear, date, day, handleDayClick, isDisabled, isToday, isSelected, monthShort, locale, theme}) {
 	var {date: mmt, yyyymmdd} = date;
 	var year = mmt.year();
 
@@ -13,7 +13,8 @@ export default function Day({currentYear, date, day, handleDayClick, isDisabled,
 	classes.push(isToday ? style.today : '')
 	classes.push(isSelected ? style.selected : '')
 	classes.push(isDisabled ? style.disabled : style.enabled)
-	classes.push(d.getDate() === 26 ? style.tipEnabled : '')
+
+	classes.push(showTooltip ? style.tipEnabled : '')
 
 	return (
 		<li
@@ -28,7 +29,7 @@ export default function Day({currentYear, date, day, handleDayClick, isDisabled,
 			{(day === 1 && currentYear !== year) && <span className={style.year}>{year}</span>}
 			{isSelected && renderSelectedDayContents(locale, isToday, day, monthShort, theme)}
 
-			<p className={style.tooltip}>Tooltip</p>
+			<p className={style.tooltip}>{tooltipTitle}</p>
 
 		</li>
 	);
