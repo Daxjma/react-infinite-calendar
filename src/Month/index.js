@@ -8,7 +8,7 @@ export default class Month extends Component {
 		return (!nextProps.isScrolling && !this.props.isScrolling);
 	}
 	renderRows() {
-		let {tooltipTitle, tooltipDates, disabledDates, disabledDays, displayDate, locale, maxDate, minDate, onDaySelect, rowHeight, rows, selectedDates, today, theme} = this.props;
+		let {tooltipDates, disabledDates, disabledDays, displayDate, locale, maxDate, minDate, onDaySelect, rowHeight, rows, selectedDates, today, theme} = this.props;
 		let currentYear = today.date.year();
 		let monthShort = displayDate.format('MMM');
 		let monthRows = [];
@@ -39,7 +39,6 @@ export default class Month extends Component {
 				days[k] = (
 					<Day
 						key={`day-${day}`}
-						tooltipTitle={tooltipTitle}
 						showTooltip={this.dateIsTooltip(date)}
 						currentYear={currentYear}
 						date={date}

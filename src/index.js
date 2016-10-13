@@ -34,7 +34,6 @@ export default class InfiniteCalendar extends Component {
 		};
 	}
 	static defaultProps = {
-		tooltipTitle: '',
 		width: 400,
 		height: 500,
 		rowHeight: 56,
@@ -418,6 +417,7 @@ export default class InfiniteCalendar extends Component {
 		let {display, isScrolling, selectedDates, showToday, shouldHeaderAnimate} = this.state;
 		let today = this.today = parseDate(moment());
 		let fixedSelectedDates = parseDates(this.props.fixedSelectedDates);
+		let tooltipDates = parseDates(this.props.tooltipDates);
 
 		return (
 			<div tabIndex={tabIndex} onKeyDown={keyboardSupport && this.handleKeyDown} className={classNames(className, style.container.root, {[style.container.landscape]: layout == 'landscape'})} style={{color: theme.textColor.default, width, fontSize: theme.calendarContainer.fontSize, fontFamily: theme.calendarContainer.fontFamily}} aria-label="Calendar" ref="node">
@@ -435,6 +435,7 @@ export default class InfiniteCalendar extends Component {
 							{...other}
 							width={width}
 							height={height}
+							tooltipDates={tooltipDates}
 							selectedDates={selectedDates}
 							fixedSelectedDates={fixedSelectedDates}
 							disabledDates={disabledDates}

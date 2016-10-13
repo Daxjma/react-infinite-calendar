@@ -29,7 +29,7 @@ export default function Day({tooltipTitle, showTooltip, currentYear, date, day, 
 			{(day === 1 && currentYear !== year) && <span className={style.year}>{year}</span>}
 			{isSelected && renderSelectedDayContents(locale, isToday, day, monthShort, theme)}
 
-			<p className={style.tooltip}>{tooltipTitle}</p>
+			<p className={style.tooltip}>{locale.tooltipTitle || ''}</p>
 
 		</li>
 	);
