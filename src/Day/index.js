@@ -13,7 +13,7 @@ export default function Day({currentYear, date, day, handleDayClick, isDisabled,
 	classes.push(isToday ? style.today : '')
 	classes.push(isSelected ? style.selected : '')
 	classes.push(isDisabled ? style.disabled : style.enabled)
-	classes.push(d.getDate() === 12 ? style.tipEnabled : '')
+	classes.push(d.getDate() === 26 ? style.tipEnabled : '')
 
 	return (
 		<li

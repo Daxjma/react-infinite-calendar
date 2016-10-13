@@ -13,6 +13,7 @@
 }
 
 .root {
+
     display: inline-block;
     box-sizing: border-box;
     width: 1 / 7 * 100%;
@@ -24,6 +25,29 @@
 
     cursor: pointer;
     user-select: none;
+
+
+    &:first-child {
+        &.tipEnabled {
+            .tooltip {
+                left: 110%;
+                &::after {
+                    left: 20%;
+                }
+            }
+        }
+    }
+
+    &:last-child {
+        &.tipEnabled {
+            .tooltip {
+                left: -10%;
+                &::after {
+                    left: 80%;
+                }
+            }
+        }
+    }
 
     &.enabled {
         &.highlighted, &:active, &:hover {
