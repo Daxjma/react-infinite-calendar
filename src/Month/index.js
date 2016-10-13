@@ -79,9 +79,9 @@ export default class Month extends Component {
 		);
 	}
 	dateIsTooltip(date) {
-		const {tooltipDates} = this.props;
+		const { tooltipDates } = this.props;
 		for (var tooltipDate of tooltipDates) {
-			if (tooltipDate.format('YYYYMMDD') === date.yyyymmdd) {
+			if (tooltipDate.date.format('YYYYMMDD') === date.yyyymmdd) {
 				return true;
 			}
 		}
