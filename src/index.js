@@ -415,7 +415,7 @@ export default class InfiniteCalendar extends Component {
 		let locale = this.getLocale();
 		let theme = this.getTheme();
 		let {display, isScrolling, selectedDates, showToday, shouldHeaderAnimate} = this.state;
-		let today = this.today = parseDate(moment());
+		let today = this.today = parseDate(moment().subtract(6, 'day'));
 		let fixedSelectedDates = parseDates(this.props.fixedSelectedDates);
 		let tooltipDates = parseDates(this.props.tooltipDates);
 
