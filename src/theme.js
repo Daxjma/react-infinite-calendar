@@ -27,13 +27,13 @@ module.exports = {
 		background: '#fff'
 	},
 	daySelected: {
-		background: 'linear-gradient(90deg, #befce8, #7dfad2)'
+		background: '#000'
 	},
 	day: {
 		fontWeight: 'normal',
 		fontSize: '1rem'
 	},
-	weekdayTextColor: '#13c9b7',
+	weekdayTextColor: '#fff',
 	weekdayPadding: '0',
-	weekdayHeaderBorderBottom: '1px solid #7dfad2'
+	weekdayHeaderBorderBottom: '1px solid #fff'
 };
