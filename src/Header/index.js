@@ -23,7 +23,7 @@ export default class Header extends Component {
 		let values = selectedDates && [
 			{
 				item: 'year',
-				value: selectedDate.year(),
+				value: selectedDates.year(),
 				active: (display === 'years'),
 				title: (display === 'days') ? `Change year` : null,
 				handleClick: (e) => {
@@ -33,26 +33,26 @@ export default class Header extends Component {
 			},
 			{
 				item: 'day',
-				key: selectedDate.format('YYYYMMDD'),
-				value: selectedDate.format(locale.headerFormat),
+				key: selectedDates.format('YYYYMMDD'),
+				value: selectedDates.format(locale.headerFormat),
 				active: (display === 'days'),
-				title: (display === 'days') ? `Scroll to ${selectedDate.format(locale.headerFormat)}` : null,
+				title: (display === 'days') ? `Scroll to ${selectedDates.format(locale.headerFormat)}` : null,
 				handleClick: (e) => {
 					e && e.stopPropagation();
 
 					if (display !== 'days') {
 						setDisplay('days');
-					} else if (selectedDate) {
-						scrollToDate(selectedDate, -40);
+					} else if (selectedDates) {
+						scrollToDate(selectedDates, -40);
 					}
 				}
 			}
 		];
 
 		return (
-			<div className={classNames(style.root, {[style.blank]: !selectedDate, [style.landscape]: layout == 'landscape'})} style={theme && {backgroundColor: theme.headerColor, color: theme.textColor.active}}>
-				{(selectedDate) ?
-					<div className={style.wrapper} aria-label={selectedDate.format(locale.headerFormat + ' YYYY')}>
+			<div className={classNames(style.root, {[style.blank]: !selectedDates, [style.landscape]: layout == 'landscape'})} style={theme && {backgroundColor: theme.headerColor, color: theme.textColor.active}}>
+				{(selectedDates) ?
+					<div className={style.wrapper} aria-label={selectedDates.format(locale.headerFormat + ' YYYY')}>
 						{values.map(({handleClick, item, key, value, active, title}) => {
 							return (
 								<div key={item} className={classNames(style.dateWrapper, style[item], {[style.active]: active})} title={title}>
