@@ -674,7 +674,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		layout: 'portrait',
 		display: 'days',
 		multiDate: false,
-		selectedDates: [new Date()],
+		selectedDates: [],
 		min: { year: 1980, month: 0, day: 0 },
 		minDate: { year: 1980, month: 0, day: 0 },
 		max: { year: 2050, month: 11, day: 31 },
