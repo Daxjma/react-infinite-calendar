@@ -146,7 +146,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		function InfiniteCalendar(props) {
 			_classCallCheck(this, InfiniteCalendar);
 
-			// Initialize
 			var _this = _possibleConstructorReturn(this, (InfiniteCalendar.__proto__ || Object.getPrototypeOf(InfiniteCalendar)).call(this));
 
 			_this.onDaySelect = function (selectedDate, e) {
@@ -413,6 +412,8 @@ return /******/ (function(modules) { // webpackBootstrap
 				_this.setState({ display: display });
 			};
 
+			console.log("Coming or Not");
+			// Initialize
 			_this.updateLocale(props.locale);
 			_this.updateYears(props);
 			_this.state = {
@@ -609,6 +610,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				var today = this.today = (0, _utils.parseDate)((0, _moment2.default)());
 
 				console.log('rendering with selected dates');
+				console.log("1234Coming");
 				console.log(_extends([], selectedDates));
 
 				return _react2.default.createElement(

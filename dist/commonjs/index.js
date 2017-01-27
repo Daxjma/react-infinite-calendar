@@ -99,7 +99,6 @@ var InfiniteCalendar = function (_Component) {
 	function InfiniteCalendar(props) {
 		_classCallCheck(this, InfiniteCalendar);
 
-		// Initialize
 		var _this = _possibleConstructorReturn(this, (InfiniteCalendar.__proto__ || Object.getPrototypeOf(InfiniteCalendar)).call(this));
 
 		_this.onDaySelect = function (selectedDate, e) {
@@ -366,6 +365,8 @@ var InfiniteCalendar = function (_Component) {
 			_this.setState({ display: display });
 		};
 
+		console.log("Coming or Not");
+		// Initialize
 		_this.updateLocale(props.locale);
 		_this.updateYears(props);
 		_this.state = {
@@ -562,6 +563,7 @@ var InfiniteCalendar = function (_Component) {
 			var today = this.today = (0, _utils.parseDate)((0, _moment2.default)());
 
 			console.log('rendering with selected dates');
+			console.log("1234Coming");
 			console.log(Object.assign([], selectedDates));
 
 			return _react2.default.createElement(
