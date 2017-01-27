@@ -183,9 +183,9 @@ export default class InfiniteCalendar extends Component {
 		const isSelected = (dateIndex === -1);
 
 		if (!beforeSelect || typeof beforeSelect == 'function' && beforeSelect(selectedDate, isSelected, selectedDates)) {
-			if (typeof onSelect == 'function') {
-				onSelect(selectedDate, isSelected, selectedDates, e);
-			}
+			//if (typeof onSelect == 'function') {
+			//	onSelect(selectedDate, isSelected, selectedDates, e);
+			//}
 
 			if (isSelected) {
 				selectedDates.push(selectedDate);
