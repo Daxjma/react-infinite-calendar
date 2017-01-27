@@ -22,7 +22,7 @@ const style = {
 export default class InfiniteCalendar extends Component {
 	constructor(props) {
 		super();
-
+    console.log("Coming or Not");
 		// Initialize
 		this.updateLocale(props.locale);
 		this.updateYears(props);
