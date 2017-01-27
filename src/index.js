@@ -411,6 +411,7 @@ export default class InfiniteCalendar extends Component {
 		let today = this.today = parseDate(moment());
 
 		console.log('rendering with selected dates');
+		console.log("1234Coming");
 		console.log(Object.assign([], selectedDates));
 
 		return (
