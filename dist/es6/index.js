@@ -335,45 +335,6 @@ var InfiniteCalendar = function (_Component) {
 			}
 		}
 	}, {
-		key: 'componentWillReceiveProps',
-		value: function componentWillReceiveProps(next) {
-			var _props2 = this.props,
-			    min = _props2.min,
-			    minDate = _props2.minDate,
-			    max = _props2.max,
-			    maxDate = _props2.maxDate,
-			    locale = _props2.locale,
-			    selectedDates = _props2.selectedDates;
-			var display = this.state.display;
-
-
-			if (next.locale !== locale) {
-				this.updateLocale(next.locale);
-			}
-			if (next.min !== min || next.minDate !== minDate || next.max !== max || next.maxDate !== maxDate) {
-				this.updateYears(next);
-			}
-			if (next.selectedDates !== selectedDates) {
-				var parsed = this.parseSelectedDates(next.selectedDates);
-				this.setState({
-					selectedDates: parsed
-				});
-				if (parsed) this.scrollToDate(parsed, -this.props.rowHeight * 2);
-			} else if (next.minDate !== minDate || next.maxDate !== maxDate) {
-				var _selectedDates = this.parseSelectedDates(this.state.selectedDates);
-				if (!_selectedDates == this.state.selectedDates) {
-					this.setState({
-						selectedDates: _selectedDates
-					});
-				}
-			}
-			if (next.display !== display) {
-				this.setState({
-					display: next.display
-				});
-			}
-		}
-	}, {
 		key: 'parseSelectedDate',
 		value: function parseSelectedDate(selectedDate) {
 			if (selectedDate) {
@@ -474,23 +435,23 @@ var InfiniteCalendar = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _props3 = this.props,
-			    className = _props3.className,
-			    disabledDays = _props3.disabledDays,
-			    height = _props3.height,
-			    hideYearsOnSelect = _props3.hideYearsOnSelect,
-			    keyboardSupport = _props3.keyboardSupport,
-			    layout = _props3.layout,
-			    overscanMonthCount = _props3.overscanMonthCount,
-			    min = _props3.min,
-			    minDate = _props3.minDate,
-			    max = _props3.max,
-			    maxDate = _props3.maxDate,
-			    showTodayHelper = _props3.showTodayHelper,
-			    showHeader = _props3.showHeader,
-			    tabIndex = _props3.tabIndex,
-			    width = _props3.width,
-			    other = babelHelpers.objectWithoutProperties(_props3, ['className', 'disabledDays', 'height', 'hideYearsOnSelect', 'keyboardSupport', 'layout', 'overscanMonthCount', 'min', 'minDate', 'max', 'maxDate', 'showTodayHelper', 'showHeader', 'tabIndex', 'width']);
+			var _props2 = this.props,
+			    className = _props2.className,
+			    disabledDays = _props2.disabledDays,
+			    height = _props2.height,
+			    hideYearsOnSelect = _props2.hideYearsOnSelect,
+			    keyboardSupport = _props2.keyboardSupport,
+			    layout = _props2.layout,
+			    overscanMonthCount = _props2.overscanMonthCount,
+			    min = _props2.min,
+			    minDate = _props2.minDate,
+			    max = _props2.max,
+			    maxDate = _props2.maxDate,
+			    showTodayHelper = _props2.showTodayHelper,
+			    showHeader = _props2.showHeader,
+			    tabIndex = _props2.tabIndex,
+			    width = _props2.width,
+			    other = babelHelpers.objectWithoutProperties(_props2, ['className', 'disabledDays', 'height', 'hideYearsOnSelect', 'keyboardSupport', 'layout', 'overscanMonthCount', 'min', 'minDate', 'max', 'maxDate', 'showTodayHelper', 'showHeader', 'tabIndex', 'width']);
 
 			var disabledDates = this.getDisabledDates(this.props.disabledDates);
 			var locale = this.getLocale();

@@ -101,36 +101,6 @@ export default class InfiniteCalendar extends Component {
 			this.node.focus();
 		}
 	}
-	componentWillReceiveProps(next) {
-		let {min, minDate, max, maxDate, locale, selectedDates} = this.props;
-		let {display} = this.state;
-
-		if (next.locale !== locale) {
-			this.updateLocale(next.locale);
-		}
-		if (next.min !== min || next.minDate !== minDate || next.max !== max || next.maxDate !== maxDate) {
-			this.updateYears(next);
-		}
-		if (next.selectedDates !== selectedDates) {
-			var parsed = this.parseSelectedDates(next.selectedDates)
-			this.setState({
-				selectedDates: parsed
-			});
-			if(parsed) this.scrollToDate(parsed,-this.props.rowHeight*2);
-		} else if (next.minDate !== minDate || next.maxDate !== maxDate) {
-			let _selectedDates = this.parseSelectedDates(this.state.selectedDates);
-			if (!_selectedDates == this.state.selectedDates) {
-				this.setState({
-					selectedDates: _selectedDates
-				});
-			}
-		}
-		if (next.display !== display) {
-			this.setState({
-				display: next.display
-			});
-		}
-	}
 	parseSelectedDate(selectedDate) {
 		if (selectedDate) {
 			selectedDate = moment(selectedDate);
