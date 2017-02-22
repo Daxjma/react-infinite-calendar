@@ -530,7 +530,7 @@ var InfiniteCalendar = function (_Component) {
 			return _react2.default.createElement(
 				'div',
 				{ tabIndex: tabIndex, onKeyDown: keyboardSupport && this.handleKeyDown, className: (0, _classnames2.default)(className, style.container.root, _defineProperty({}, style.container.landscape, layout == 'landscape')), style: { color: theme.textColor.default, width: width }, 'aria-label': 'Calendar', ref: 'node' },
-				_react2.default.createElement(_Header2.default, { selectedDate: selectedDates && selectedDates.length && selectedDates[0], shouldHeaderAnimate: shouldHeaderAnimate, layout: layout, theme: theme, locale: locale, scrollToDate: this.scrollToDate, setDisplay: this.setDisplay, display: display }),
+				_react2.default.createElement(_Header2.default, { selectedDate: today, shouldHeaderAnimate: shouldHeaderAnimate, layout: layout, theme: theme, locale: locale, scrollToDate: this.scrollToDate, setDisplay: this.setDisplay, display: display }),
 				_react2.default.createElement(
 					'div',
 					{ className: style.container.wrapper },
