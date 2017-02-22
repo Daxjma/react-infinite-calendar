@@ -386,9 +386,8 @@ export default class InfiniteCalendar extends Component {
 
 		return (
 			<div tabIndex={tabIndex} onKeyDown={keyboardSupport && this.handleKeyDown} className={classNames(className, style.container.root, {[style.container.landscape]: layout == 'landscape'})} style={{color: theme.textColor.default, width}} aria-label="Calendar" ref="node">
-				{/**showHeader &&
-					<Header selectedDate={selectedDates && selectedDates.length && selectedDates[0]} shouldHeaderAnimate={shouldHeaderAnimate} layout={layout} theme={theme} locale={locale} scrollToDate={this.scrollToDate} setDisplay={this.setDisplay} display={display} />
-				*/}
+				<Header selectedDate={selectedDates && selectedDates.length && selectedDates[0]} shouldHeaderAnimate={shouldHeaderAnimate} layout={layout} theme={theme} locale={locale} scrollToDate={this.scrollToDate} setDisplay={this.setDisplay} display={display} />
+
 				<div className={style.container.wrapper}>
 					<Weekdays theme={theme} />
 					<div className={style.container.listWrapper}>
